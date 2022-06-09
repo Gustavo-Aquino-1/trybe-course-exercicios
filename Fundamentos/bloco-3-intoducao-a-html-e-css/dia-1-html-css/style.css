@@ -5,9 +5,8 @@ body{
 }
 
 nav{
-    margin-top: -20px;
+    margin-top: 50px;
     margin-bottom: 50px;
-    text-align: center;
 }
 
 nav a{
@@ -15,29 +14,34 @@ nav a{
     color: rgb(28, 68, 156);
 }
 
-a:hover{
-    color: rgb(230, 109, 109);
+#foto{
+    float: left;
+    padding: 10px;
+    background-color: rgb(19, 94, 87);
 }
 
-#prin{
-    width: 700px;
-    background-color:rgb(27, 136, 76);
-    margin: auto;   
-    padding: 40px;
-    height: 700px;
-    border-radius: 15px;
+.lado{
+    position: absolute;
+    width: 550px;
+    top:36%;
+    right:10% ;
+    
 }
 
 .left{
-    max-width: 350px;
-    float: left;
+    clear: both;
 }
 
-.right{
-    float: right;
-    margin-right: 50px;
-}
-
-#top{
+.nome{
     text-align: center;
+}
+
+#top-cont{
+    height: 222px;
+    border: 3px solid black;
+    position: relative;
+}
+
+ul.org3  li:nth-child(odd){
+    background-color: rgb(49, 146, 146);
 }
