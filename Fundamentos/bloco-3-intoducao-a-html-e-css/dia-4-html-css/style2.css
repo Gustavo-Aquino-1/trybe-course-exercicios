@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    background-color: #13293D;
+    height: 50px;
+    padding: 5px 20px;
+}
+
+h1{
+    text-align: center;
+    color: wheat;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+h2{
+    margin-top: 20px;
+    margin-left: 30px;
+    color: wheat;
+    text-align: center;
+}
+
+#cima{
+    background-color: #006494;
+    height: 40px;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+#cima li{
+    display: inline-block;
+    margin-right: 40px;
+}
+
+nav li a{
+    text-decoration: none;
+    color: white;
+}
+
+article{
+    width: 85%;
+    background-color: #247ba0;
+    float: left;
+    /* height: 950px; */
+}
+aside{
+    width: 15%;
+    float: right;
+    background-color: #206b8b;
+    height:950px;
+}
+
+section{
+    background-color: #e8f1f2;
+    margin-top: 20px ;
+    margin-left: 40px;
+    width: 92%;
+    padding: 10px 20px;
+    border-radius: 15px;
+    height: 400px;
+}
+.left{
+    width: 50%;
+    float: left;
+}
+.info img{
+    width: 25%;
+    border-radius: 20px;
+    float: right;
+    margin-right: 50px;
+}
+
+.esquerda{
+    max-width: 50%;
+    float: left;
+}
+footer{
+    clear: both;
+    text-align: center;
+    background-color: rgba(121, 255, 215, 0.507);
+    height: 50px;
+
+}
+
+iframe{
+    float: right;
+    margin-top: 35px;
+    width: 35%;
+    border-radius: 15px;
+}
+
+h3{
+    margin-top: 50px;
+}
+#baixo{
+    margin-top: 20px;
+}
+
+#baixo li{
+    margin-top: 70px;
+}
+
+#baixo ul{
+    list-style-type: none;
+}
+
+aside{
+    text-align: center;
+    color: white;
+}
