@@ -58,68 +58,87 @@
   <body>
     <script>
       // COLOQUE SEU CÓDIGO AQUI
-      const body = document.getElementsByTagName('body')[0]
-      const titileH1 = document.createElement('h1')
-      titileH1.innerText = 'Exercício 5.2 - JavaScript DOM '
-      titileH1.className = 'title'
-      body.appendChild(titileH1)
+      
+//     🚀 Adicione a tag h1 com o texto Exercício 5.2 - JavaScript DOM como filho da tag body;
+
+let titleH1 = document.createElement('h1')
+titleH1.innerText = 'Exercício 5.2 - JavaScript DOM'
+document.getElementsByTagName('body')[0].appendChild(titleH1)
 
 
-      const main = document.createElement('main')
-      main.className = 'main-content'
-      body.appendChild(main)
+//     🚀 Adicione a tag main com a classe main-content como filho da tag body;
+let mainTag = document.createElement('main')
+mainTag.className = 'main-content'
+document.getElementsByTagName('body')[0].appendChild(mainTag)
 
-      const section1 = document.createElement('section')
-      section1.className = 'center-content'
-      document.querySelector('.main-content').appendChild(section1)
 
-      const p1 = document.createElement('p')
-      document.querySelector('.center-content').appendChild(p1)
+//     🚀 Adicione a tag section com a classe center-content como filho da tag main criada no passo 2;
+let section1 = document.createElement('section')
+section1.className = 'center-content'
+document.getElementsByClassName('main-content')[0].appendChild(section1)
 
-      const section2 = document.createElement('section')
-      section2.className = 'left-content'
-      document.querySelector('.main-content').appendChild(section2)
+//     🚀 Adicione a tag p como filho do section criado no passo 3 e coloque algum texto;
+let p1 = document.createElement('p')
+document.getElementsByClassName('center-content')[0].appendChild(p1)
 
-      const section3 = document.createElement('section')
-      section3.className = 'rigth-content'
-      document.querySelector('.main-content').appendChild(section3)
+//     🚀 Adicione a tag section com a classe left-content como filho da tag main criada no passo 2;
+let sectionLeft = document.createElement('section')
+sectionLeft.className = 'left-content'
+document.getElementsByClassName('main-content')[0].appendChild(sectionLeft)
 
-      const img = document.createElement('img')
-      img.src = 'https://picsum.photos/200'
-      img.className = 'small-image'
-      document.querySelector('.left-content').appendChild(img)
+//     🚀 Adicione a tag section com a classe right-content como filho da tag main criada no passo 2;
+let sectionRight = document.createElement('section')
+sectionRight.className = 'right-content'
+document.getElementsByClassName('main-content')[0].appendChild(sectionRight)
 
-      const ul = document.createElement('ul')
-      ul.id = 'numbers'
-      document.querySelector('.rigth-content').appendChild(ul) // nao funcionou pois o pai nao estava inserido no html//tem adicionar a ul no html antes de gerar as lis se nao nao vai funcionar :)
-      for(let i =1 ; i <=10 ; i += 1){
-        let li = i;
-        let liItem = document.createElement('li')
-        liItem.innerText = li ;
-        const ulItem = document.getElementById('numbers')
-        ulItem.appendChild(liItem)
-      }
+//     🚀 Adicione uma imagem com src configurado para o valor https://picsum.photos/200 e classe small-image. Esse elemento deve ser filho do section criado no passo 5;
+let img = document.createElement('img')
+img.src = 'https://picsum.photos/200'
+img.className = 'small-image'
+document.querySelector('.left-content').appendChild(img)
 
-    for(let i = 0 ; i < 3 ; i+= 1){
-      let h3 = document.createElement('h3')
-      h3.className = 'description'
-      document.querySelector('.main-content').appendChild(h3)  //funcionou pois o pai ja estava inseido no html
-    }
+//     🚀 Adicione uma lista não ordenada com os valores de 1 a 10 por extenso, ou seja, um, dois, três, ... como valores da lista. Essa lista deve ser filha do section criado no passo 6;
+let ulList = document.createElement('ul')
+ulList.id = 'list'
+document.querySelector('.right-content').appendChild(ulList)
+const numbers = ['um','dois','tres','quatro','cinco','seis','sete','oito','nove','dez']
+const ulLista = document.getElementById('list')
+for(let i = 0 ; i < numbers.length ; i ++){
+  let li = numbers[i]
+  let liItem = document.createElement('li')
+  liItem.innerText = li;
+  ulLista.appendChild(liItem)
+}
 
-    // document.querySelector('.main-content').firstElementChild.nextElementSibling.remove()
-    const mainC =  document.querySelector('.main-content')
-    const leftC = document.querySelector('.left-content')
-    mainC.removeChild(leftC)
+//     🚀 Adicione 3 tags h3, todas sendo filhas do main criado no passo 2.
 
-    const rightC = document.querySelector('.rigth-content')
-    rightC.style.marginRight = 'auto'
+for(let i = 0 ; i < 3 ; i++){
+  let h3 = document.createElement('h3')
+  h3.className = 'description'
+  document.querySelector('.main-content').appendChild(h3)
+  
+}
 
-    const section = document.querySelector('.center-content').parentElement
-    section.style.backgroundColor = 'green'
+// Agora que você criou muita coisa, vamos fazer algumas alterações e remoções:
 
-    const ulList = document.getElementById('numbers')
-    ulList.lastChild.remove()
-    ulList.lastChild.remove()
+//     🚀 Adicione a classe title na tag h1 criada;
+let h1W = document.getElementsByTagName('h1')[0]
+h1W.className = 'title'
+//     🚀 Adicione a classe description nas 3 tags h3 criadas;
+
+//     🚀 Remova a section criado no passo 5 (aquele que possui a classe left-content). Utilize a função .removeChild();
+document.querySelector('.main-content').removeChild(sectionLeft)
+//     🚀 Centralize a section criado no passo 6 (aquele que possui a classe right-content). Dica: para centralizar, basta configurar o margin-right: auto da section;
+let rigth = document.querySelector('.right-content');
+rigth.style.marginRight = 'auto'
+//     🚀 Troque a cor de fundo do elemento pai da section criada no passo 3 (aquela que possui a classe center-content) para a cor verde;
+let center = document.querySelector('.center-content').parentElement
+center.style.backgroundColor = 'green'
+//     🚀 Remova os dois últimos elementos (nove e dez) da lista criada no passo 8.
+let list = document.getElementById('list')
+list.lastElementChild.remove()
+list.lastElementChild.remove()
+
     
     </script>
   </body>
