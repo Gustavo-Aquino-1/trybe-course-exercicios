@@ -1,188 +1,268 @@
 function createDaysOfTheWeek() {
-    const weekDays = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado']
-    const weekDaysList = document.querySelector('.week-days');
+    const weekDays = [
+      "Domingo",
+      "Segunda",
+      "Terça",
+      "Quarta",
+      "Quinta",
+      "Sexta",
+      "Sábado",
+    ];
+    const weekDaysList = document.querySelector(".week-days");
   
     for (let index = 0; index < weekDays.length; index += 1) {
       const days = weekDays[index];
-      const dayListItem = document.createElement('li');
+      const dayListItem = document.createElement("li");
       dayListItem.innerHTML = days;
   
       weekDaysList.appendChild(dayListItem);
-    };
-};
+    }
+  }
   
   createDaysOfTheWeek();
   
   // Escreva seu código abaixo.
-
-function daysOfTheMonth(){
+  // Exercício 1:
+  
+  //     Crie um calendário dinamicamente.
+  //     O array decemberDaysList contém os dois últimos dias de novembro e os dias do mês de dezembro. Sua função deve criar dinamicamente cada dia do calendário e os adicionar dentro da tag <ul>.
+  
+  //         Note que os dias 29 e 30 de novembro estão no array, pois representam respectivamente Domingo e Segunda-feira.
+  
+  //     A tag <ul> deve conter o id 'days';
+  //     Os dias devem estar contidos em uma tag <li>, e todos devem ter a classe day. Ex: <li class="day">3</li>
+  //     Os dias 24, 25 e 31 são feriados e, além da classe day, devem conter também a classe holiday. Ex: <li class="day holiday">24</li>
+  //     Os dias 4, 11, 18 e 25 são sextas-feiras. Eles devem conter a classe day e a classe friday. Ex: <li class="day friday">4</li>
+  
+  // let decemberDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
+  
+  function daysMonth(){
+    const list = document.getElementById('days')
     let decemberDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
-    const ulList = document.getElementById('days')
     for(let day of decemberDaysList){
-        let dayItem = document.createElement('li');
-        dayItem.innerText = day;
-        ulList.appendChild(dayItem) 
-        if(day === 24 | day === 31){
-            dayItem.className = 'day holiday'
-        }else if(day === 4 | day === 11 | day === 18){
-            dayItem.className = 'day friday'
-        }else if(day === 25){
-            dayItem.className = 'day holiday friday'
-        }else{
-            dayItem.className = 'day'
-        }
+      let li = document.createElement('li')
+      li.innerText = day;
+      list.appendChild(li)
+      if(day === 24 || day === 31){
+        li.className = 'day holiday'
+      }else if(day === 4 || day === 11 || day ===18){
+        li.className = 'day friday'
+      }else if(day === 25){
+        li.className = 'day holiday friday'
+      }else{
+        li.className = 'day'
+      }
     }
-}
-
-daysOfTheMonth();
-
-function buttonHoliday(string){
-    const buttonContainer = document.querySelector('.buttons-container')
-    const button = document.createElement('button')
-    button.innerText = string;
-    button.id = 'btn-holiday' 
-    buttonContainer.appendChild(button)
-}
-
-buttonHoliday('Feriados');
-
-function alteraHoliday(){
-    const botaoHoliday = document.getElementById('btn-holiday')
-    let dayHoli = document.getElementsByClassName('holiday')
-    botaoHoliday.addEventListener('click',function(){
-        for(let holi of dayHoli){
-            if(holi.style.backgroundColor !== 'green'){
-                holi.style.backgroundColor = 'green'
-            }else{
-                holi.style.backgroundColor = 'rgb(238,238,238)'
-            }
+  }
+  
+  daysMonth();
+  // 🚀 Exercício 2:
+  
+  //     Implemente uma função que crie dinamicamente um botão com o nome "Feriados".
+  //         Sua função deve receber um parâmetro com a string 'Feriados'
+  //         Adicione a este botão a ID "btn-holiday"
+  //         Adicione este botão como filho/filha da tag <div> com classe "buttons-container"
+  
+  function botHoliday(string){
+    const divPai = document.querySelector('.buttons-container')
+    const botao = document.createElement('button')
+    botao.id = "btn-holiday"
+    botao.innerText = string;
+    divPai.appendChild(botao)
+  }
+  
+  botHoliday('Feriados')
+  
+  // 🚀 Exercício 3:
+  
+  //     Implemente uma função que muda a cor de fundo dos dias que possuem a classe "holiday".
+  //         Adicione ao botão "Feriados" um evento de "click" que altere a cor de fundo dos dias que possuem a classe "holiday"
+  
+  //         👀 É interessante que esse botão possua também a lógica inversa. Ao ser clicado novamente, ele retorna à configuração inicial com a cor "rgb(238,238,238)".
+  
+  function corHoliday(){
+      const feriados = document.getElementsByClassName('holiday')
+      const button = document.getElementById("btn-holiday");
+      button.addEventListener('click',function(){
+        for(let i of feriados){
+          if(i.style.backgroundColor !== 'blue'){
+            i.style.backgroundColor = 'blue'
+          }else{
+            i.style.backgroundColor = "rgb(238,238,238)"
+          }
         }
-    })
-}
-alteraHoliday();
-
-function botaoSexta(string){
-    let buttonContainer = document.querySelector('.buttons-container')
-    let botSexta = document.createElement('button')
-    botSexta.innerText = string;
-    botSexta.id = 'btn-friday'
-    buttonContainer.appendChild(botSexta)
-}
-
-botaoSexta('Sexta-feira')
-
-function alteraTextoSexta(arrayDays){
-    const botaoSexta = document.getElementById('btn-friday')
-    let fridays = document.getElementsByClassName('friday')
-    let texto = 'Sextou!'
+      })
+  }
+  
+  corHoliday();
+  
+  // 🚀 Exercício 4:
+  // Implemente uma função que crie dinamicamente um botão com o nome "Sexta-feira". Sua função deve receber como parâmetro a string "Sexta-feira".
+  
+  //     Adicione a esse botão o ID "btn-friday";
+  //     Adicione esse botão como filho/filha da tag <div> com classe "buttons-container".
+  
+  function botFriday(string){
+    const divPai = document.querySelector('.buttons-container');
+    const botaoSexta = document.createElement('button');
+    botaoSexta.innerText = string;
+    botaoSexta.id = 'btn-friday';
+    divPai.appendChild(botaoSexta);
+  }
+  
+  botFriday('Sexta-feira');
+  
+  // 🚀 Exercício 5:
+  // Implemente uma função que modifica o texto exibido nos dias que são Sexta-feira. Adicione ao botão "Sexta-feira" um evento de "click" e modifique o texto a ser exibido nos dias que são sextas-feiras.
+  
+  //     👀 É interessante que esse botão possua também a lógica inversa. Ao ser clicado novamente, ele retorna à configuração inicial exibindo os dias.
+  
+  function mudaSexta(array){
+    const sextasFeiras = document.getElementsByClassName('friday');
+    const botaoSexta = document.getElementById('btn-friday') 
+    const texto = 'SEXTOUU'
     botaoSexta.addEventListener('click',function(){
-        for(let index in fridays){
-            if(fridays[index].innerText === texto){
-                fridays[index].innerText = arrayDays[index]
-            }else{
-                fridays[index].innerText = texto;
-            }
+      for(let sexta in sextasFeiras){
+        if(sextasFeiras[sexta].innerHTML !== texto){
+          sextasFeiras[sexta].innerText = texto
+        }else{
+          sextasFeiras[sexta].innerHTML = array[sexta]
         }
+      }
     })
-}
-
-alteraTextoSexta([4,11,18,25])
-
-function zoom(){
-    const ulDays = document.getElementById('days')
-    ulDays.addEventListener('mouseover',function(event){
-        event.target.style.fontSize = '30px'
-    })
-}
-
-zoom();
-
-function Saizoom(){
-    const ulDays = document.getElementById('days')
-    ulDays.addEventListener('mouseout',function(event){
-        event.target.style.fontSize = '20px'
-    })
-}
-
-Saizoom();
-
-
-function taskNew(string){
-    let span = document.createElement('span')
-    span.innerText = string
-    const myTasks = document.querySelector('.my-tasks')
-    myTasks.appendChild(span)
-}
-
-taskNew('Novo projeto')
-
-
-function addColor(cor){
-    const myTasks = document.querySelector('.my-tasks')
-    let div = document.createElement('div')
-    div.className = 'task'
-    div.style.backgroundColor = cor;
-    myTasks.appendChild(div)
-}
-
-addColor('green');
-
-function selectTask(){
-  let div = document.querySelector('.task')
-  div.addEventListener('click',function(){
-    if(div.className.includes('selected')){
-        div.classList.remove('selected')
-    }else{
-        div.classList.add('selected')
-    }
-    })
-}
-
-selectTask();
-
-
-function colorTask(){
+  }
+  
+  mudaSexta([4,11,18,25])
+  
+  
+  // 🚀 Exercício 6:
+  
+  //     Implemente duas funções que criem um efeito de "zoom". Ao passar o ponteiro do mouse em um dia do mês no calendário, o texto desse dia deve aumentar e, quando o ponteiro do mouse sair do dia, o texto deve retornar ao tamanho original.
+  //         Dica - Propriedade: event.target.
+  
+  function zoomEntra(){
+     const days = document.getElementById('days')
+     days.addEventListener('mouseover',function(event){
+      event.target.style.fontSize = '30px'
+     })
+  }
+  
+  zoomEntra();
+  
+  function zoomSai(){
     const days = document.getElementById('days')
+    days.addEventListener('mouseout',function(event){
+      event.target.style.fontSize = '20px'
+    })
+  }
+  
+  zoomSai();
+  
+  // 🚀 Exercício 7:
+  
+  //     Implemente uma função que adicione uma tarefa personalizada ao calendário. A função deve receber como parâmetro a string com o nome da tarefa (ex: "cozinhar") e criar dinamicamente um elemento com a tag <span> contendo a tarefa.
+  //         O elemento criado deverá ser adicionado como filho/filha da tag <div> que possui a classe "my-tasks".
+  
+  function addTask(string){
+    const divPai = document.querySelector('.my-tasks')
+    const spanTask = document.createElement('span');
+    spanTask.innerText = string;
+    divPai.appendChild(spanTask)
+  }
+  
+  addTask('Projeto');
+  
+  
+  // 🚀 Exercício 8:
+  // Implemente uma função que adicione uma legenda com cor para a tarefa.
+  
+  // * Essa função deverá receber como parâmetro uma string ('cor') e criar dinamicamente um elemento de tag `<div>` com a classe `task`.
+  
+  //     O parâmetro cor deverá ser utilizado como cor de fundo da <div> criada.
+  //     O elemento criado deverá ser adicionado como filho/filha da tag <div> que possui a classe "my-tasks".
+  
+  function addTaskColor(color){
+    let div = document.createElement('div')
+    div.style.backgroundColor = color;
+    div.className = 'task'
+    const divPai = document.querySelector('.my-tasks')
+    divPai.appendChild(div)
+  }
+  
+  addTaskColor('aqua');
+  
+  // 🚀 Exercício 9:
+  
+  //     Implemente uma função que selecione uma tarefa.
+  //         Adicione um evento que ao clicar no elemento com a tag <div> referente à cor da sua tarefa, atribua a esse elemento a classe task selected, ou seja, quando sua tarefa possuir a classe task selected ela estará selecionada.
+  //         Ao clicar novamente no elemento, a sua classe deverá voltar a ser somente task, ou seja, essa tarefa está deixando de ser uma tarefa selecionada.
+  
+  function taskSelected(){
+      const div = document.querySelector('.task')
+      div.addEventListener('click',function(event){
+        if(event.target.className.includes('selected')){
+          event.target.classList.remove('selected')
+        }else{
+          event.target.className = 'task selected'
+        }
+      })
+  }
+  
+  taskSelected();
+  
+  
+  // 🚀 Exercício 10:
+  
+  //     Implemente uma função que atribua a cor da tarefa ao dia do calendário.
+  //         Adicione um evento que, ao clicar em um dia do mês no calendário, atribua a esse dia a cor da legenda da sua tarefa selecionada.
+  //         Ao clicar novamente no dia com a cor da legenda, a sua cor deverá voltar à configuração inicial rgb(119,119,119)
+  
+  function dayColor(){
+    const days = document.getElementById('days');
     const task = document.querySelector('.task')
-    let cor = task.style.backgroundColor;
     const taskSe = document.getElementsByClassName('selected')
     days.addEventListener('click',function(event){
-        if(event.target.style.color !== cor){
-            let color = taskSe[0].style.backgroundColor;
-            event.target.style.color = color;
-        }else{
-            let unsetColor = 'rgb(119,119,119)'
-            event.target.style.color = unsetColor;
-        }
+      if(task.className.includes('selected')){
+        event.target.style.color = taskSe[0].style.backgroundColor
+      }else{
+        event.target.style.color = 'rgb(119,119,119)'
+      }
     })
-}
-
-colorTask();
-
-
-function addTasksForCalendar(){
+  }
+  
+  dayColor();
+  
+  
+  // 🚀 Bônus:
+  // Vamos adicionar compromissos ao seu calendário? Implemente uma função que, ao digitar um compromisso na caixa de texto "COMPROMISSOS", adiciona o item à lista "MEUS COMPROMISSOS" ao clicar no botão "ADICIONAR".
+  
+  //     Se nenhum caractere for inserido no campo input, a função deve retornar um alert com uma mensagem de erro ao clicar em "ADICIONAR".
+  //     Ao pressionar a tecla "enter" o evento também deverá ser disparado.
+  //     Dica - Propriedade: key.
+  
+  function addTaskInList(){
     const inputValor = document.getElementById('task-input')
-    const botao = document.getElementById('btn-add')
-    const list = document.querySelector('.task-list')
-    botao.addEventListener('click',function(){
-        if(inputValor.value.length > 0){  //é necessario o uso do length
-            let li = document.createElement('li')
-            li.innerText = inputValor.value;
-            list.appendChild(li)
-            inputValor.value = ''
-        }else{
-            alert('Não Há tarefa para inseir')
-        }
-    })
-
+    const btnAdd = document.getElementById('btn-add')
+    const lista = document.querySelector('.task-list')
     inputValor.addEventListener('keyup',function(event){
-        if(event.key === 'Enter' && inputValor.value.length > 0){
-            let li = document.createElement('li')
-            li.innerText = inputValor.value;
-            list.appendChild(li)
-            inputValor.value = ''
-        }
+      if(event.key === 'Enter' && inputValor.value.length > 0){
+        let li = document.createElement('li')
+        li.innerText = inputValor.value;
+        lista.appendChild(li)
+        inputValor.value = ''
+      }
     })
-}
-
-addTasksForCalendar();
+    
+    btnAdd.addEventListener('click',function(){
+      if(inputValor.value.length > 0){
+        let li = document.createElement('li')
+        li.innerText = inputValor.value;
+        lista.appendChild(li)
+        inputValor.value = ''
+      }else{
+        alert('Não há oque adicionar!')
+      }
+    })
+  }
+  
+  addTaskInList();
