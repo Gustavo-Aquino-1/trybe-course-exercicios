@@ -8,39 +8,39 @@
 </head>
 <body>
     <form action="" method="GET">
-        <label for="nome">Seu Nome :
+        <label for="nome">Seu Nome : </label>
             <input type="text" id="nome" placeholder="Digite seu nome" minlength="10" maxlength="40">
-        </label> <br><br>
+        <br><br>
         
-        <label for="email-input">Seu email : 
+        <label for="email-input">Seu email :  </label> 
             <input type="email" placeholder="Digite seu email" name="email-text" minlength="10" maxlength="50" required id="email-input">
-        </label> <br><br>
+       <br><br>
    
-        <label for="destiny">Destino predileto : 
-            <select name="" id="destiny">
-                <option value="EUA">Estados unidos</option>
-                <option selected value="ALE">Alemanha</option>
-                <option value="FRA">França</option>
-                <option value="ING">Inglaterra</option>
-            </select>
-        </label> <br><br>
+        <label for="destiny">Destino predileto :</label> 
+        <select name="" id="destiny">
+            <option value="EUA">Estados unidos</option>
+            <option selected value="ALE">Alemanha</option>
+            <option value="FRA">França</option>
+            <option value="ING">Inglaterra</option>
+        </select>
+        <br><br>
       
-        <label for="text">
+        <label for="text"></label> 
             <legend>Porque você merece ganhar?</legend>
             <textarea name="" maxlength="500" id="text" cols="30" rows="10"></textarea>
-        </label> <br><br>
+         <br><br>
       
-        <label for="date">Qual melhor data para sua viagem?
+        <label for="date">Qual melhor data para sua viagem?</label> 
             <input type="date" name="" id="date">
-        </label> <br><br>
+         <br><br>
       
-        <label for="check">
-            <input type="checkbox" checked name="viagem" id="check">Gostaria de receber outras incríveis oportunidades oferecidas pela Trybe? 
-        </label> <br><br>
+        <label for="check"> </label> 
+        <input type="checkbox" checked name="viagem" id="check">Gostaria de receber outras incríveis oportunidades oferecidas pela Trybe? 
+         <br><br>
        
-        <label for="check2">
+        <label for="check2"></label> 
             <input type="checkbox" required checked name="viagem" id="check2">Concordo que imagens das minhas férias poderão ser usadas na divulgação de concursos futuros. 
-        </label> <br><br>
+         <br><br>
       
         <input type="submit" value="Enviar" id="inputSub"> <br><br>
         
@@ -49,3 +49,10 @@
     <script src="script.js"></script> 
 </body>
 </html>
+
+
+
+<!-- deve ser feito desta forma , com input fora da label fazendo a ligação entre eles com o id do input.
+<label for="check"> </label> 
+<input type="checkbox" checked name="viagem" id="check">Gostaria de receber outras incríveis oportunidades oferecidas pela Trybe?  -->
+
