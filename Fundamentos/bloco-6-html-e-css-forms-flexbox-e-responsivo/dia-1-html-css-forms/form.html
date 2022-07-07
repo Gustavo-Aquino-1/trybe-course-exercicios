@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="header">
+        <h1>Trybe Trip</h1>
+    </header>
+ <main>
+    <form action="" method="GET">
+        <section class="form-content">
+            
+            <div class="line">
+                <label for="nome">Seu Nome : </label>
+                <input type="text" autofocus id="nome" placeholder="Digite seu nome" minlength="10" maxlength="40">
+            </div>
+            
+            <div class="line">
+                <label for="email-input">Seu email :  </label>
+                <input type="email" placeholder="Digite seu email" name="email-text" minlength="10" maxlength="50" required id="email-input">
+            </div>
+ 
+            <div class="line">
+                <label for="destiny">Destino predileto :</label>
+                <select name="" id="destiny">
+                    <option value="EUA">Estados unidos</option>
+                    <option selected value="ALE">Alemanha</option>
+                    <option value="FRA">França</option>
+                    <option value="ING">Inglaterra</option>
+                </select>
+            </div>    
+            
+            <div class="line">
+                <label for="text"></label>
+                <legend>Porque você merece ganhar?</legend>
+                <textarea name="" maxlength="500" id="text" cols="30" rows="10"></textarea>
+            </div>
+
+            <div class="line">
+                <label for="date">Qual melhor data para sua viagem ➢</label>
+                <input type="date" name="" id="date">
+            </div>
+            
+            <div class="line">
+                <label for="check"> </label>
+                <input type="checkbox" checked name="viagem" id="check"> Gostaria de receber outras incríveis oportunidades oferecidas pela Trybe?
+            </div>
+
+            <div class="line">
+                <label for="check2"></label>
+                <input type="checkbox" required checked name="viagem" id="check2"> Concordo que imagens das minhas férias poderão ser usadas na divulgação de concursos futuros.
+            </div>
+
+            <div class="line botao">
+                <input type="submit" value="Enviar" id="inputSub">
+                <input type="reset" id="reset" value="Resetar">
+            </div>
+        </section><!-- apaga tudo contido nos inputs -->
+    </form>
+  </main> 
+    <script src="script.js"></script> 
+</body>
+</html>
+
+
+
+<!-- deve ser feito desta forma , com input fora da label fazendo a ligação entre eles com o id do input.
+<label for="check"> </label> 
+<input type="checkbox" checked name="viagem" id="check">Gostaria de receber outras incríveis oportunidades oferecidas pela Trybe?  -->
+
