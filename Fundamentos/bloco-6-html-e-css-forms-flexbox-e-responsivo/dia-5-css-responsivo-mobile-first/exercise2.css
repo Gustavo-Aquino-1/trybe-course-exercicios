@@ -1,0 +1,165 @@
+html {
+    box-sizing: border-box;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: content-box;
+  }
+
+  body{
+    background-color:rgb(183, 183, 156);
+  }
+  
+  #title{
+    font-size: 18px;
+    color: rgb(222, 210, 73);
+  }
+
+
+  main{
+    margin: 10px auto;
+    width: 80%;
+  }
+
+  header{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(50, 31, 31);
+    color: white;
+    padding: 10px;
+}
+
+nav ul{
+    list-style: none;
+    margin: 5px auto;
+    display: flex;
+    justify-content: center;
+    padding: 0px;
+}
+
+footer p{
+    margin-top: 0.8em;
+    max-width: 80%;
+}
+  nav ul li{
+    margin: 0px 1em;
+    font-size: 17px;
+  }
+
+ 
+footer{
+    margin: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(50, 31, 31);
+    color: white;
+    padding: 10px;
+}
+
+h1,h2,h3{
+    color: rgb(65, 44, 44);
+}
+
+h1{
+    font-size: 28px;
+}
+
+h2{
+     font-size: 24px;
+}
+
+h3{
+    font-size: 21px;
+}
+
+.h3white{
+    color: rgb(181, 169, 37);
+}
+
+@media screen and (min-width:700px) {
+    header{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    h1{
+        font-size: 30px;
+    }
+
+    h2{
+        font-size: 25px;
+    }
+
+    h3{
+        font-size: 20px;
+    }
+    
+    #title{
+        font-size: 20px;
+        margin-left: 25px;
+    }
+
+    nav ul li{
+        font-size: 18px;
+        margin: 0px 25px;
+    }
+    
+    body{
+        font-size: 20px;
+    }
+
+    main{
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #lists h2{
+        text-align: center;
+    }
+
+    #lists{
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content:space-between;
+    }
+
+}
+
+@media screen and (min-width:1250px) {
+    h1{
+        font-size: 35px;
+    }
+
+    h2{
+        font-size: 30px;
+    }
+
+    h3{
+        font-size: 25px;
+    }
+    
+     #title{
+        font-size: 23px;
+        margin-left: 40px;
+    } 
+
+    nav ul li{
+        font-size: 20px;
+        margin: 0px 40px;
+    }
+
+ 
+    body{
+        font-size: 23px;
+    }
+
+    footer p {
+        max-width: 50%;
+    }
+
+}
