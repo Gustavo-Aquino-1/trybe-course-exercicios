@@ -39,8 +39,8 @@ const lesson1 = {
 //   const valuesObj = obj => Object.values(obj);
 //   console.log(valuesObj(lesson2))
 
-//   //5
-//   let allLessons = Object.assign({},{lesson1,lesson2,lesson3}) //criando um novo objeto , junatnado os 3 objetos em um só e colocando este em um objeto vazio , olhe o console.log!! 
+//   5
+let allLessons = Object.assign({},{lesson1,lesson2,lesson3}) //criando um novo objeto , junatnado os 3 objetos em um só e colocando este em um objeto vazio , olhe o console.log!! 
 //   console.log(allLessons)
   
 //   //6
@@ -64,7 +64,7 @@ const lesson1 = {
 
   //
 
-  const exists = (obj,chave,valor) => {
+/*   const exists = (obj,chave,valor) => {
     const array = [chave, valor] //crinado array para compara com os arrays criados na linha abaixo
     const chaves = Object.entries(obj)
     let existe = false;
@@ -76,4 +76,45 @@ const lesson1 = {
     return existe
   }
 
-  console.log(exists(lesson1,'turno','manhã'))
+  console.log(exists(lesson1,'turno','manhã')) */
+
+
+  //-----------------|Bônus|------------------
+
+  //1
+//   const matClass = () => {
+//     let somaAulas = 0 
+//     for(let chave in allLessons){
+//         let lessons = allLessons[chave]
+//         if(lessons.materia === 'Matemática'){
+//             somaAulas += lessons.numeroEstudantes
+//         }
+//     }
+//     return somaAulas
+//   }
+
+//  console.log(matClass());
+
+ //2
+ const relatroy = (obj,teacherName) => {
+    let values = Object.values(obj)
+    let sum = 0
+    let aulas = [];
+    for(let i in values){
+        let lessons = values[i]; //obejot atual que estou mechendo
+        for(let item in lessons){// para cada chave deste objeto
+            if(lessons[item] === teacherName){ // se o valor na posição lessons[item] corresponder ao nome indicado pelo usuario ele fara a confição
+                sum += lessons.numeroEstudantes
+                aulas.push(lessons.materia)
+            }
+        }
+    }
+    let newObject = {
+        professor: teacherName,
+        aulas: aulas,
+        estudantes: sum
+    }
+    return newObject
+ }
+
+console.log(relatroy(allLessons,'Maria Clara'))
