@@ -45,25 +45,24 @@ const mage = {
   const returnObject = () => {
     const minDamage = mage.intelligence
     const maxDamage = mage.intelligence * 2
-    const mana = mage.mana - 15
-    mage.mana = mana;
+    mage.mana = mage.mana -15;
     let aleactoryDamage = Math.floor(Math.random() * (maxDamage + 1))
     while(aleactoryDamage < minDamage){
         aleactoryDamage =  Math.floor(Math.random() * (maxDamage + 1))
     }
     if(mage.mana  < 15 ){
         console.log('Nao possui mana suficiente')
-        mana += 15;
-        mage.mana = mana;
+        mage.mana = mage.mana + 15;
     }
 
      let obj = {
          damageShadow: aleactoryDamage ,
-         gastedMana: mana 
+         gastedMana: mage.mana
      }
      return obj;
   }
 
+  returnObject();
   const gameActions = {
     // Crie as HOFs neste objeto.
     turnWarrior: (func) => {
@@ -89,7 +88,14 @@ const mage = {
     }
   };
 
-  gameActions.turnWarrior(damageReturnedWarrior)
+  gameActions.turnMage(returnObject)
+  gameActions.turnMage(returnObject)
+  gameActions.turnMage(returnObject)
   gameActions.turnMage(returnObject)
   gameActions.turnDragon(dragonDamage)
+  gameActions.turnDragon(dragonDamage)
+  gameActions.turnDragon(dragonDamage)
+  gameActions.turnWarrior(damageReturnedWarrior)
+
+
   gameActions.situation()
