@@ -62,13 +62,36 @@ const books = [
   ];
   
   // Adicione o código do exercício aqui:
-  
-  //1
 
-  function authorBornIn1947(arr) {
+  //2
+
+  function smallerName() {
+    let nameBook;
     // escreva aqui o seu código
-    const obj = arr.find((element) =>  element.author.birthYear === 1947) //o autor vai guardar o objeto que satizfaz esta condição
-    return obj.author.name //estou retornando uma chave do objeto guardado pelo find anteriormente
+     let tamanhos = [] 
+     let namesBook = books.forEach((element) => tamanhos.push(element.name.length))
+     let minTamanho = tamanhos.sort((a,b) => a-b)
+     let min = minTamanho[0]
+     let livroObj = books.find((element) => element.name.length === min )
+     return livroObj.name
+    // Variável nameBook que receberá o valor do menor nome;
+    // return nameBook;
   }
 
- console.log(authorBornIn1947(books));
+  console.log(smallerName())
+
+  //forma alternativa
+
+  function smallerName() {
+    let nameBook; //como nameBook é vazio ele é considerado um falsy , ou seja falso
+    //logo no if eu coloquei o contario de nameBook no caso true , ou seja quando ela estiver vazia o contrario vai ser true so que depois que ela ja adcionoiu um um elemento om contrario sera false!! 
+    // escreva aqui o seu código
+  
+    books.forEach((book) => {
+      if (!nameBook || book.name.length < nameBook.length) { //leia o !nameBook (se ela estiver vazia)
+        nameBook = book.name;
+      }
+    });
+    // Variável nameBook que receberá o valor do menor nome;
+    return nameBook;
+  }

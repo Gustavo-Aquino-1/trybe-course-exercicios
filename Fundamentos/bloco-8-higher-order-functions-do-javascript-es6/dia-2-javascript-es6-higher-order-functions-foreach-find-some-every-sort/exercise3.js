@@ -62,13 +62,9 @@ const books = [
   ];
   
   // Adicione o código do exercício aqui:
-  
-  //1
-
-  function authorBornIn1947(arr) {
-    // escreva aqui o seu código
-    const obj = arr.find((element) =>  element.author.birthYear === 1947) //o autor vai guardar o objeto que satizfaz esta condição
-    return obj.author.name //estou retornando uma chave do objeto guardado pelo find anteriormente
+  function getNamedBook() {
+    // escreva seu código aqui
+    return books.find((element) => element.name.length === 26 )
   }
 
- console.log(authorBornIn1947(books));
+  console.log(getNamedBook())

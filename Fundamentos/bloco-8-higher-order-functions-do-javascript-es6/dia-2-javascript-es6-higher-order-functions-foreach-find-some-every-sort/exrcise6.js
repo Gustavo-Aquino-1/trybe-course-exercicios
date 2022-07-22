@@ -62,13 +62,14 @@ const books = [
   ];
   
   // Adicione o código do exercício aqui:
-  
-  //1
 
-  function authorBornIn1947(arr) {
-    // escreva aqui o seu código
-    const obj = arr.find((element) =>  element.author.birthYear === 1947) //o autor vai guardar o objeto que satizfaz esta condição
-    return obj.author.name //estou retornando uma chave do objeto guardado pelo find anteriormente
-  }
+  //6
+ const expectedResult = true;
 
- console.log(authorBornIn1947(books));
+const someBookWasReleaseOnThe80s = () => {
+  // escreva seu código aqui
+  return books.some(element => element.releaseYear >= 1980 && element.releaseYear <= 1989)
+  //o some espera que pelo menos um elemnto seja true , entao ele retorna true, so que se nenhum elemento satisfaza a condição ele retorna false
+}
+
+console.log(someBookWasReleaseOnThe80s())

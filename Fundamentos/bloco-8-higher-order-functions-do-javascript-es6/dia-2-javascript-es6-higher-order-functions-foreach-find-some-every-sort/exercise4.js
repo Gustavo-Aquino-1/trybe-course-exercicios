@@ -61,14 +61,11 @@ const books = [
     },
   ];
   
-  // Adicione o código do exercício aqui:
-  
-  //1
 
-  function authorBornIn1947(arr) {
-    // escreva aqui o seu código
-    const obj = arr.find((element) =>  element.author.birthYear === 1947) //o autor vai guardar o objeto que satizfaz esta condição
-    return obj.author.name //estou retornando uma chave do objeto guardado pelo find anteriormente
+  const booksOrderedByReleaseYearDesc = () => {
+    // escreva aqui seu código
+    let livrosOrdenados = books.sort((a,b) => b.releaseYear - a.releaseYear )
+    return livrosOrdenados;
   }
 
- console.log(authorBornIn1947(books));
+  console.log(booksOrderedByReleaseYearDesc())

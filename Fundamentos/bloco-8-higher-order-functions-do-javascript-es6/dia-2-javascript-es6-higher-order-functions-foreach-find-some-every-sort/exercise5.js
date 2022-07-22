@@ -62,13 +62,24 @@ const books = [
   ];
   
   // Adicione o código do exercício aqui:
-  
-  //1
+  const expectedResult = false;
 
-  function authorBornIn1947(arr) {
-    // escreva aqui o seu código
-    const obj = arr.find((element) =>  element.author.birthYear === 1947) //o autor vai guardar o objeto que satizfaz esta condição
-    return obj.author.name //estou retornando uma chave do objeto guardado pelo find anteriormente
+  const everyoneWasBornOnSecXX = () => {
+    // escreva seu código aqui
+    return books.every((element) => {
+        if(element.author.birthYear > 1901 && element.author.birthYear < 2000 ){
+            return true;
+        }
+        return false;
+    } )
   }
 
- console.log(authorBornIn1947(books));
+//resumida:
+
+// function everyoneWasBornOnSecXX() {
+//   return books.every((book) => (
+//     book.author.birthYear > 1900 && book.author.birthYear <= 2000 //nao prescisa de if pois essa operação ja retorna false ou true;
+//   ));
+// }
+
+  console.log(everyoneWasBornOnSecXX())
