@@ -17,7 +17,7 @@ Bloco 05: JavaScript: DOM, Eventos e Web Storage ✔
 
 Bloco 06: HTML e CSS: Forms, Flexbox e Responsivo ✔
 
-Bloco 07: Introdução à JavaScript ES6 e Testes Unitários 
+Bloco 07: Introdução à JavaScript ES6 e Testes Unitários ✔
 
 Bloco 08: Higher Order Functions do JavaScript ES6
 
